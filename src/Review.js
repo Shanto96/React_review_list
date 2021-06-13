@@ -30,6 +30,13 @@ const Review = () => {
       })
 
   }
+  const randomPerson = () =>{
+    let randomNumber = Math.floor(Math.random()*people.length);
+    if (randomNumber===index){
+      randomNumber= index+1;
+    }
+    setIndex(checkNumber(randomNumber));
+  }
   const {name,job,image,text}= people[index];
 
 
@@ -47,7 +54,7 @@ const Review = () => {
       <button className="prev-btn" onClick ={prevPerson} >< FaChevronLeft /></button>
       <button className="next-btn" onClick = {nextPerson}>< FaChevronRight /></button>
       <br/>
-      <button className="random-btn">surprise me</button>
+      <button className="random-btn" onClick = {randomPerson}>surprise me</button>
     </div>
   </article>;
 };
